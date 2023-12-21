@@ -23,3 +23,12 @@ jobs:
         id: run_ut
         shell: cmd
         run: vstest.console.exe Debug\HelloTest.dll
+      - name: Set up Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: 3.8  # You can specify the Python version you need
+      - name: Send Email
+        id: send_email
+        shell: cmd
+        run: python sendEmail.py "xyz" "hui.zhang@broadcom.com" "Code review request"
+
