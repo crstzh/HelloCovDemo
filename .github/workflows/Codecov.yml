@@ -30,5 +30,5 @@ jobs:
       - name: Send Email
         id: send_email
         shell: cmd
-        run: python sendEmail.py "Review request from: ${{ github.event.head_commit.committer.username }}" "hui.zhang@broadcom.com" "Code review request: ${{ github.repository }}/commit/${{ github.sha }}.patch"
+        run: python sendEmail.py "${{github.event.head_commit.committer.username }}" "hui.zhang@broadcom.com" "${{ github.repository }}/commit/${{ github.sha }}.patch"
 
